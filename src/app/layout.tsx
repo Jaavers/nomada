@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
-import { kentishVol1, kentishVol2 } from "./fonts/kentish";
+import { kentishVol1 } from "./fonts/kentish";
 import { AppProviders } from "@/components/AppProviders";
 import "./globals.css";
 
@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${kentishVol1.variable} ${kentishVol2.variable} ${cormorant.variable} ${jakarta.variable} h-full antialiased`}
+      className={`${kentishVol1.variable} ${cormorant.variable} ${jakarta.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-absolute text-sand">
         <AppProviders>{children}</AppProviders>
