@@ -3,6 +3,11 @@ import type { Product } from "@/types/product";
 
 export async function getProducts(): Promise<Product[]> {
   const supabase = createServerSupabaseClient();
+  if (!supabase) {
+    console.warn("[BentoMenu] Supabase client is not initialized (missing environment variables).");
+    return [];
+  }
+
   const { data, error } = await supabase
     .from("products")
     .select("*")

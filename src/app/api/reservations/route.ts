@@ -48,6 +48,13 @@ export async function POST(request: Request) {
 
   try {
     const supabase = createServerSupabaseClient();
+    if (!supabase) {
+      console.error("[reservations] Supabase client is not initialized.");
+      return NextResponse.json(
+        { ok: false, error: "server_error" },
+        { status: 500 },
+      );
+    }
     const { error } = await supabase.from("reservations").insert({
       full_name: fullName,
       email,
