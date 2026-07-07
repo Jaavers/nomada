@@ -5,6 +5,9 @@ import { OrigenGrano } from "@/components/sections/OrigenGrano/OrigenGrano";
 import { ContactoReservas } from "@/components/sections/ContactoReservas/ContactoReservas";
 import { Footer } from "@/components/sections/Footer/Footer";
 
+export const dynamic = "force-dynamic";
+
+
 export default function Home() {
   return (
     <main className="flex flex-1 flex-col">
